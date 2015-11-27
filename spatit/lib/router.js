@@ -8,7 +8,7 @@ Router.map(function(){
     template: 'home',
     data: function(){
       templateData = {
-        products: Products.find({is_featured:1})
+        products: Products.find({is_featured:"1"})
       };
       return templateData;
     }
@@ -20,6 +20,32 @@ Router.map(function(){
     data: function(){
       templateData = {
         products: Products.find()
+      };
+
+      return templateData;
+    }
+  });
+
+  this.route('add_product',{
+    path:'/add_product',
+    template: 'add_product',
+    data: function(){
+      templateData = {
+        categories: Categories.find()
+      };
+
+      return templateData;
+    }
+  });
+
+  this.route('category_products',{
+    path:'/categories/:slug',
+    template: 'category_products',
+    data: function(){
+      templateData = {
+        category_products: Products.find({
+          category:this.params.slug
+        })
       };
 
       return templateData;

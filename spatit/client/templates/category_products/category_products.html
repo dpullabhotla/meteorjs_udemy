@@ -1,6 +1,6 @@
-<template name="home">
-  <h3>Featured Products</h3>
-  {{#each products}}
+<template name="category_products">
+  <h3>Products</h3>
+  {{#each category_products}}
   <div class="row product-row">
     <div class="col-md-2">
       <img src="{{image}}" class="full">
@@ -8,12 +8,12 @@
     <div class="col-md-10">
       <h4>{{name}}</h4>
       <p>Average rating: </p>
-      <p>{{description}}</p>
+      <p>{{truncateText description 250}}</p>
       <a href="{{pathFor product}}" class="btn btn-default">Read reviews</a>
         <a href="{{pathFor newReview}}" class="btn btn-primary">Add review</a>
     </div>
   </div>
   {{else}}
-  <p>There are no products found.</p>
+  <p>There are no products in this category.</p>
   {{/each}}
 </template>
