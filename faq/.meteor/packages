@@ -21,3 +21,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
 iron:router
 aldeed:collection2
 ewall:foundation
+houston:admin
