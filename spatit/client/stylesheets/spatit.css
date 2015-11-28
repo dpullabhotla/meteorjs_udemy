@@ -17,6 +17,6 @@ footer{
   margin-bottom: 20px;
 }
 
-.product-row :last-child{
+.product-row:last-child{
   border-bottom: none;
 }

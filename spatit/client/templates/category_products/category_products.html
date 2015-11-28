@@ -9,8 +9,8 @@
       <h4>{{name}}</h4>
       <p>Average rating: </p>
       <p>{{truncateText description 250}}</p>
-      <a href="{{pathFor product}}" class="btn btn-default">Read reviews</a>
-        <a href="{{pathFor newReview}}" class="btn btn-primary">Add review</a>
+      <a href="{{pathFor 'product'}}" class="btn btn-default">Read reviews</a>
+        <a href="{{pathFor 'new_review'}}" class="btn btn-primary">Add review</a>
     </div>
   </div>
   {{else}}

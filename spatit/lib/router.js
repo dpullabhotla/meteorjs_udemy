@@ -51,4 +51,20 @@ Router.map(function(){
       return templateData;
     }
   });
+
+  this.route('new_review',{
+    path:'/new_review/:_id',
+    template:'new_review',
+    data: function(){
+      return Products.findOne(this.params._id);
+    }
+  });
+
+  this.route('product',{
+    path:'/products/:_id',
+    template:'product',
+    data: function(){
+      return Products.findOne(this.params._id);
+    }
+  });
 });
