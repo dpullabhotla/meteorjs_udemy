@@ -7,7 +7,9 @@
     </div>
     <div class="col-md-10">
       <h4>{{name}}</h4>
-      <p>Average rating: </p>
+      <p>Average rating: <img class="stars" src="/img/{{getAvg reviews}}_stars.png">(
+        {{getReviewsTotal reviews.length}}
+        )</p>
       <p>{{description}}</p>
       <a href="{{pathFor product}}" class="btn btn-default">Read reviews</a>
         <a href="{{pathFor newReview}}" class="btn btn-primary">Add review</a>

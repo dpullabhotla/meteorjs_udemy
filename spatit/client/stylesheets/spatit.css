@@ -20,3 +20,8 @@ footer{
 .product-row:last-child{
   border-bottom: none;
 }
+
+.stars{
+  margin-bottom: 5px;
+  width: 80px;
+}
