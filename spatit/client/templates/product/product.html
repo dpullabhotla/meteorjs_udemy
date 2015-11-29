@@ -6,10 +6,13 @@
     </div>
     <div class="col-md-10">
       <h4>{{name}}</h4>
-      <p>Average rating: RATING</p>
+      <p>Average rating: <img class="stars" src="/img/{{getAvg reviews}}_stars.png">(
+        {{getReviewsTotal reviews}}
+        )</p>
       <p>{{description}}</p>
     </div>
   </div>
+  {{#if currentUser}}
   <div class="row">
     <div class="col-md-12">
       <div class="text-right">
@@ -17,16 +20,17 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <hr/>
+  {{/if}}
     <h4>Reviews &amp; Ratings</h4>
     {{#each reviews}}
-    <div class="col-md-2">
+    <div class="row">
+    <div class="col-md-10">
       <img class="stars" src="/img/{{rating}}_stars.png"/> {{body}}
     </div>
-    <div class="col-md-10">
-      {{review_date}}
+    <div class="col-md-2">
+      {{formatDate review_date}}
     </div>
+    </div>
+    <hr/>
     {{/each}}
-  </div>
 </template>

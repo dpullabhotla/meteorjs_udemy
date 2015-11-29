@@ -7,18 +7,27 @@ Template.registerHelper('truncateText', function(text,length){
 
 Template.registerHelper('getAvg',function(reviews){
   var sum = 0;
-  for(var i=0;i<reviews.length;i++){
+
+  if(reviews != undefined){
+  for(var i=0;i< reviews.length;i++){
     sum += parseInt(reviews[i].rating, 10);
   }
   var avg = sum/reviews.length;
 
   return Math.round(avg);
+  }
+  
 });
 
-Template.registerHelper('getReviewsTotal',function(total){
-  if(total > 0){
-    return total;
-  }else{
-    return 0;
+Template.registerHelper('getReviewsTotal',function(reviews){
+  var total = 0;
+  if(reviews != undefined && reviews.length != undefined && reviews.length > 0){
+    total = reviews.length;
   }
+
+  return total;
+});
+
+Template.registerHelper('formatDate',function(date){
+  return moment(date).format('MM-DD-YYYY');
 });

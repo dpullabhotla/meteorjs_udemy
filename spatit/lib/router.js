@@ -2,6 +2,20 @@ Router.configure({
   layoutTemplate: 'layout'
 });
 
+var OnBeforeActions = {
+  loginRequired: function(){
+    if(!Meteor.userId()){
+      Router.go("/")
+    }else{
+      this.next();
+    }
+  }
+}
+
+Router.onBeforeAction(OnBeforeActions.loginRequired,{
+  only: ['add_product','new_review']
+});
+
 Router.map(function(){
   this.route('home', {
     path:'/',
