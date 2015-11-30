@@ -7,8 +7,7 @@ Template.add_product.events({
 
       var file = $('#productImage').get(0).files[0];
 
-      Meteor.call('addProduct',file, name, category, description,is_featured);
-      /*if(file){
+      if(file){
         fsFile = new FS.File(file);
         ProductsImages.insert(fsFile, function(err,result){
           if(!err){
@@ -35,7 +34,7 @@ Template.add_product.events({
           createdAt: new Date()
         });
       }
-      */
+      
       event.target.name.value = "";
       event.target.category.value = "";
       event.target.description.value = "";
