@@ -83,5 +83,4 @@ Router.map(function(){
     path:'/staff/departments/add',
     template: 'add_department'
   });
-
 });
