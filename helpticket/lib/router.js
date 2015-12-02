@@ -48,24 +48,24 @@ Router.map(function(){
     template: 'stafftickets',
     data: function(){
       templateData = {
-        tickets: Tickets.find({customer: Meteor.userId()})
+        tickets: Tickets.find()
       };
 
       return templateData;
     }
   });
 
-  this.route('stafftickets',{
+/*  this.route('stafftickets',{
     path:'/stafftickets',
     template: 'stafftickets',
     data: function(){
       templateData = {
-        tickets: Tickets.find({customer: Meteor.userId()})
+        tickets: Tickets.find()
       };
 
       return templateData;
     }
-  });
+  });*/
 
   this.route('departments',{
     path:'/staff/departments',

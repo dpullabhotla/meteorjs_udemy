@@ -1,4 +1,5 @@
 <template name="departments">
+  {{#if isStaff}}
   <div class="panel panel-primary dept-table">
         <div class="panel-heading">
             <h3 class="panel-title">Manage Departments</h3>
@@ -31,8 +32,10 @@
             </tbody>
         </table>
     </div>
+{{/if}}
 </template>
 <template name="add_department">
+  {{#if isStaff}}
   <form class="add-department-form">
        <div class="form-group">
            <label>Name</label>
@@ -46,4 +49,5 @@
 
        <button type="submit" class="btn btn-primary">Add</button>
    </form>
+   {{/if}}
 </template>

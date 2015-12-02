@@ -19,7 +19,7 @@
 	<hr>
 
 	{{#each replies}}
-		<div class="reply-{{userType}}"><strong>{{capFirst userType}}</strong> [{{replyDate}}]: <strong>{{reply}}</strong></div>
+		<div class="reply-{{userType}}"><strong>{{capFirst userType}}</strong> [{{formatDate replyDate}}]: <strong>{{reply}}</strong></div>
 	{{/each}}
 
 </template>
