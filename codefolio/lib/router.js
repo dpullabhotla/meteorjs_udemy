@@ -49,4 +49,9 @@ Router.map(function(){
     template:'edit_project'
   });
 
+  this.route('login',{
+    path:'/admin',
+    template: 'login',
+  });
+
 });

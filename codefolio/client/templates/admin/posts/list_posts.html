@@ -1,0 +1,29 @@
+<template name="list_posts">
+  <div class="container pt">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>Blog Posts</h2>
+        <a href="/admin/posts/add" class="btn btn-primary btn-tiny">Create Post</a>
+        <br><br>
+        <table class="table table-striped">
+          	<tr>
+              <th>Post Title</th>
+              <th>Date</th>
+              <th></th>
+            </tr>
+            {{#each posts}}
+            <tr>
+              <td>{{title}}</td>
+              <td>{{createdAt}}</td>
+              <td><a href="/admin/posts/edit/{{_id}}" class="btn btn-default btn-dance">Edit</a>
+                <button class="btn btn-default delete_post">Delete</button>
+              </td>
+            </tr>
+            {{else}}
+            <tr><td> No posts found.</td></tr>
+            {{/each}}
+        </table>
+   </div>
+  </div>
+</div>
+</template>
