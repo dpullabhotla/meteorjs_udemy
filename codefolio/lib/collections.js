@@ -9,16 +9,16 @@ Posts.attachSchema(new SimpleSchema({
     type: String,
     max: 500
   },
-  createdBy:{
+  userId:{
     type:String,
     autoValue: function(){
-      return Meteor.userId();
-    },
-    updatedAt: {
+      return Meteor.userId()
+    }
+  },
+  updatedAt: {
       type: Date,
       autoValue: function(){
         return new Date()
       }
     }
-  }
 }));
