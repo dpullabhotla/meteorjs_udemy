@@ -2,6 +2,10 @@ Template.add_project.onRendered(function(){
    this.$('.datetimepicker').datetimepicker();
 });
 
+Template.edit_project.onRendered(function(){
+   this.$('.datetimepicker').datetimepicker();
+});
+
 Template.add_project.events({
   'submit .add_project_form': function(){
     var name = event.target.name.value;
