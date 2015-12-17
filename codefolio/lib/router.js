@@ -45,8 +45,7 @@ Router.map(function(){
     path:'/admin/posts/edit/:_id',
     template:'edit_posts',
     data: function(){
-      var currentPost = this.params._id;
-      return Posts.findOne({_id: this.params._id}) 
+      return Posts.findOne({_id: this.params._id})
     },
     onBeforeAction: function(){
       if(!Meteor.userId() || Meteor.userId() == null){
@@ -58,7 +57,19 @@ Router.map(function(){
 
   this.route('list_projects',{
     path:'/admin/projects',
-    template:'list_projects'
+    template:'list_projects',
+    data: function(){
+      templateData = {
+        projects: Projects.find()
+      }
+      return templateData;
+    },
+    onBeforeAction: function(){
+      if(!Meteor.userId() || Meteor.userId() == null){
+        Router.go('/')
+      }
+      this.next();
+    }
   });
 
   this.route('add_project',{
@@ -67,8 +78,17 @@ Router.map(function(){
   });
 
   this.route('edit_project',{
-    path:'/admin/projects/edit/edit/:_id',
-    template:'edit_project'
+    path:'/admin/projects/edit/:_id',
+    template:'edit_project',
+    data: function(){
+      return Projects.findOne({_id: this.params._id})
+    },
+    onBeforeAction: function(){
+      if(!Meteor.userId() || Meteor.userId() == null){
+        Router.go('/')
+      }
+      this.next();
+    }
   });
 
   this.route('login',{
