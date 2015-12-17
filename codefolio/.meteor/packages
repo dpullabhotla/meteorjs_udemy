@@ -23,3 +23,8 @@ mrt:flash-messages
 accounts-ui
 accounts-password
 twbs:bootstrap
+aldeed:collection2
+momentjs:moment
+tsega:bootstrap3-datetimepicker
+cfs:standard-packages
+cfs:gridfs
