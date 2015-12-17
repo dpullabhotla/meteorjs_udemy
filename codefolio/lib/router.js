@@ -21,7 +21,13 @@ Router.map(function(){
 
   this.route('list_posts',{
     path:'/admin/posts',
-    template:'list_posts'
+    template:'list_posts',
+    onBeforeAction: function(){
+      if(Meteor.user() == null){
+        Router.go('/')
+      }
+      this.next();
+    }
   });
 
   this.route('add_posts',{
