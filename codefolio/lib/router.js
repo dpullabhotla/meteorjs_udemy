@@ -22,8 +22,14 @@ Router.map(function(){
   this.route('list_posts',{
     path:'/admin/posts',
     template:'list_posts',
+    data: function(){
+      templateData = {
+        posts: Posts.find()
+      }
+      return templateData;
+    },
     onBeforeAction: function(){
-      if(Meteor.user() == null){
+      if(!Meteor.userId() || Meteor.userId() == null){
         Router.go('/')
       }
       this.next();
@@ -36,8 +42,18 @@ Router.map(function(){
   });
 
   this.route('edit_posts',{
-    path:'/admin/posts/edit/edit/:_id',
-    template:'edit_post'
+    path:'/admin/posts/edit/:_id',
+    template:'edit_posts',
+    data: function(){
+      var currentPost = this.params._id;
+      return Posts.findOne({_id: this.params._id}) 
+    },
+    onBeforeAction: function(){
+      if(!Meteor.userId() || Meteor.userId() == null){
+        Router.go('/')
+      }
+      this.next();
+    }
   });
 
   this.route('list_projects',{

@@ -13,7 +13,8 @@ Posts.attachSchema(new SimpleSchema({
     type:String,
     autoValue: function(){
       return Meteor.userId();
-    },
+    }
+  },
     updatedAt: {
       type: Date,
       autoValue: function(){
@@ -21,4 +22,4 @@ Posts.attachSchema(new SimpleSchema({
       }
     }
   }
-}));
+));

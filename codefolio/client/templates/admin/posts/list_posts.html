@@ -8,13 +8,15 @@
         <table class="table table-striped">
           	<tr>
               <th>Post Title</th>
+              <th>Post Body</th>
               <th>Date</th>
               <th></th>
             </tr>
             {{#each posts}}
             <tr>
               <td>{{title}}</td>
-              <td>{{createdAt}}</td>
+              <td>{{body}}</td>
+              <td>{{formatDate updatedAt}}</td>
               <td><a href="/admin/posts/edit/{{_id}}" class="btn btn-default btn-dance">Edit</a>
                 <button class="btn btn-default delete_post">Delete</button>
               </td>
