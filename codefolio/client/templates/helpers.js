@@ -33,3 +33,21 @@ Template.layout.events({
     });
   }
 });
+
+Template.registerHelper('getSiteTitle', function(){
+  return 'CodeFolio';
+});
+
+Template.registerHelper('getAdminName', function(){
+  return 'John Doe';
+});
+
+Template.registerHelper('getAdminImage', function(){
+  return '/assets/img/user.png';
+});
+
+Template.work.helpers({
+  projects: function(){
+    return Projects.find();
+  }
+});

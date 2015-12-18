@@ -9,15 +9,48 @@ Router.map(function(){
   });
 
   this.route('about');
-  this.route('work');
+  //this.route('work');
   this.route('contact');
+
+  this.route('work',{
+    path:'/work',
+    template: 'work',
+    data: function(){
+      templateData = {
+        projects: Projects.find()
+      }
+      return templateData;
+    }
+  });
+
+  this.route('project',{
+    path:'/projects/:_id',
+    template: 'project',
+    data: function(){
+      return Projects.findOne({_id: this.params._id})
+    }
+  });
 
   this.route('blog', {
     path:'/blog',
-    template: 'blog'
+    template: 'blog',
+    data: function(){
+      templateData = {
+        posts: Posts.find()
+      }
+      return templateData;
+    }
   });
 
-  this.route('post');
+  this.route('blog_post', {
+    path:'/blog/post/:_id',
+    template: 'blog_post',
+    data: function(){
+      return Posts.findOne({_id: this.params._id})
+    }
+  });
+
+//  this.route('post');
 
   this.route('list_posts',{
     path:'/admin/posts',
